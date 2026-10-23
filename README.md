@@ -33,14 +33,14 @@ npm start
 
 ## GitHub Pagesでの公開
 
-公開するファイルだけを `npm run build` で `_site/` に生成します。テスト、開発用スクリプト、試用版の `preview.html` は公開対象に含めません。
+現在の公開元は `main` ブランチのルートです。`.nojekyll` により静的ファイルをそのまま配信します。`main` に変更を反映するとPagesの公開処理が起動します。
 
-GitHubリポジトリの **Settings → Pages → Build and deployment** で以下を設定します。
+GitHubリポジトリの **Settings → Pages → Build and deployment** の設定：
 
 - Source: **Deploy from a branch**
-- Branch: **gh-pages**
+- Branch: **main**
 - Folder: **/ (root)**
 
-Save後、GitHubのPagesデプロイが完了すると利用できます。通常の公開先は `https://yosukemasonhashimoto.github.io/my-first-project/` です。リポジトリが非公開の場合、GitHub Pagesの利用可否は契約プランに依存します。リポジトリを公開に変更する操作はこの手順に含みません。
+公開先は `https://yosukemasonhashimoto.github.io/my-first-project/` です。支出データは利用端末のブラウザに保存され、GitHubには送られません。公開前のプレビューに入力した試用データは、公開URLには自動では移行されません。
 
-ソースは `main`、公開用静的ファイルは `gh-pages` で管理します。`main` への変更だけでは公開サイトは更新されません。更新時はテスト後にビルドし、`_site/` の内容を `gh-pages` に反映します。公開前のプレビューに入力した試用データは、公開URLには自動では移行されません。
+公開用ファイルだけを抽出したい場合は `npm run build` で `_site/` に生成できます。別途準備した `gh-pages` ブランチは現在の公開元ではありません。
