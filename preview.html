@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#164d43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default">
+<style>:root{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;color:#263e37;background:#f6f5f0;font-synthesis:none}*{box-sizing:border-box}body{margin:0}main{max-width:560px;margin:auto;padding:38px 22px calc(24px + env(safe-area-inset-bottom))}header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}.eyebrow{font-size:10px;letter-spacing:2.5px;color:#76867c;margin:0 0 10px}h1{font-size:27px;font-weight:600;letter-spacing:2px;margin:0}h1 span{display:block;font-size:11px;letter-spacing:1px;color:#7b877f;font-weight:400;margin-top:9px}.logo{font-size:43px;color:#74997d}h2{font-size:15px;font-weight:600;margin:0}.balance{background:#164d43;color:#fff;border-radius:23px;padding:25px 24px;box-shadow:0 12px 25px #164d4310}.period-row{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px;color:#d7e4dc}.badge{font-size:10px;white-space:nowrap;background:#ffffff14;border:1px solid #ffffff20;padding:5px 8px;border-radius:20px}.balance h2{font-size:12px;font-weight:400;margin-top:29px;color:#d1dfd7}.amount{font-size:48px;letter-spacing:-1.5px;font-weight:500;font-variant-numeric:tabular-nums;margin:10px 0 25px;overflow-wrap:anywhere}.meter{height:5px;background:#ffffff25;border-radius:4px;overflow:hidden}#progress{height:100%;background:#cce3b8;transition:width .3s}.totals{display:flex;justify-content:space-between;font-size:11px;color:#c1d4ca;margin-top:13px;gap:10px}.totals strong{color:#fff;font-weight:500;margin-left:4px}.next{border-top:1px solid #ffffff1a;padding-top:16px;margin:21px 0 0;font-size:11px;color:#c1d4ca}.entry-section{margin-top:32px}.section-sub{display:block;font-size:11px;font-weight:400;color:#879087;margin-top:7px}form{background:#fff;border:1px solid #e9ebe3;border-radius:18px;padding:22px;margin-top:17px}label{display:block;font-size:11px;margin-bottom:8px;color:#69796e}.amount-input{display:flex;align-items:center;border-bottom:1px solid #dce4db;gap:10px}.amount-input span{font-size:24px;color:#9ba79c}.amount-input input{font-size:34px;border:0;padding:4px 0;width:100%;border-radius:0}.help{font-size:10px;color:#97a096;margin:8px 0 23px}.form-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:15px}input,select,button{font:inherit}input{width:100%;min-width:0;color:#263e37;border:1px solid #e1e6de;background:#fff;border-radius:8px;padding:11px 9px;font-size:16px}input[type=date]{appearance:none;min-height:44px}.optional{font-size:9px;color:#99a297;margin-left:4px}input:focus,button:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid #85ad83;outline-offset:3px}button{cursor:pointer;border:1px solid #dce4db;background:#fff;color:#38584a;border-radius:9px;padding:11px 15px;min-height:44px}.primary{background:#164d43;color:#fff;border:0;width:100%;margin-top:22px;padding:15px;font-size:14px;font-weight:500}.primary:active{background:#246456}.history{margin-top:32px}.history-heading{display:flex;justify-content:space-between;align-items:center;gap:8px}select{max-width:65%;border:1px solid #dfe4db;border-radius:7px;padding:8px 6px;background:transparent;color:#667b6b;font-size:11px}.history-total{font-size:11px;color:#7b877f}ul{padding:0;margin:0;list-style:none}li{display:flex;align-items:center;gap:10px;padding:16px 0;border-bottom:1px solid #e6e8e0}.item-icon{background:#e9ede2;border-radius:11px;display:grid;place-items:center;width:37px;height:39px;color:#6a8564}.item-info{flex:1;min-width:0}.item-note{font-size:13px;overflow-wrap:anywhere}.item-date{font-size:10px;color:#8c978d;margin-top:5px}.item-amount{font-size:15px;white-space:nowrap;font-variant-numeric:tabular-nums}.delete{border:0;color:#929b91;padding:8px;font-size:15px;background:transparent}.empty{text-align:center;padding:32px 5px;font-size:12px;color:#6b7b70;line-height:2}.empty span{font-size:11px;color:#919b91}.settings{border-top:1px solid #e2e6dd;margin-top:26px;padding-top:21px;color:#819080;font-size:11px;line-height:1.9}.settings summary{cursor:pointer}.settings p{margin-top:15px}.backup-actions{display:flex;gap:10px}footer{text-align:center;font-size:10px;letter-spacing:1px;color:#9ba497;margin:30px 0 0}#status{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:max-content;max-width:90vw;background:#263e37;color:#fff;padding:14px 20px;border-radius:12px;box-shadow:0 4px 24px #0002;font-size:13px;z-index:10}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}@media(min-width:700px){main{padding-top:55px}.balance{padding:30px}.amount{font-size:56px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.notice{border:1px solid #d9c995;background:#fff8df;color:#70551e;border-radius:12px;padding:14px;font-size:12px;line-height:1.8;margin:0 0 20px}.feedback{font-size:12px;line-height:1.7;color:#38584a;margin:14px 0 0}
+</style><title>わたしの余白 — 月10万円の家計簿</title>
+</head>
+<body data-preview="true">
+<main>
+<header><div><p class="eyebrow">MY PERSONAL BUDGET</p><h1>わたしの余白<span>毎月10万円を、心地よく。</span></h1></div><span class="logo" aria-hidden="true">◒</span></header>
+<p id="storage-notice" class="notice" role="alert" hidden></p>
+<section class="balance" aria-labelledby="balance-title"><div class="period-row"><span id="period"></span><span class="badge">毎月25日更新</span></div><h2 id="balance-title">あと使えるお金</h2><p class="amount" id="remaining">—</p><div class="meter" role="progressbar" aria-label="予算の使用率" aria-valuemin="0" aria-valuemax="100"><div id="progress"></div></div><div class="totals"><span>使ったお金 <strong id="spent">—</strong></span><span>予算 ¥100,000</span></div><p class="next" id="next"></p></section>
+<section class="entry-section"><h2>使ったお金を記録<span class="section-sub">ひとつずつ、かんたんに。</span></h2><form id="entry-form"><label for="amount">金額</label><div class="amount-input"><span>¥</span><input id="amount" name="amount" type="text" inputmode="numeric" pattern="[0-9０-９,，]+" placeholder="0" required autocomplete="off" maxlength="12" aria-describedby="amount-help"></div><p id="amount-help" class="help">1円単位で入力してください</p><div class="form-row"><div><label for="date">使った日</label><input id="date" name="date" type="date" required min="1900-01-01" max="9999-12-31"></div><div><label for="note">メモ <span class="optional">任意</span></label><input id="note" name="note" placeholder="ランチ、買いものなど" maxlength="100"></div></div><button type="button" id="record-entry" class="primary">＋ 支出を記録する</button><p id="form-feedback" class="feedback" role="status" hidden></p></form></section>
+<section class="history"><div class="history-heading"><h2>支出の記録</h2><label class="sr-only" for="history-period">表示する予算期間</label><select id="history-period"></select></div><p class="history-total" id="history-total"></p><ul id="entries"></ul><p id="empty" class="empty">まだ支出の記録がありません。<br><span>使ったお金を記録してみましょう。</span></p></section>
+<details class="settings"><summary>データの保存とバックアップ</summary><p>データはこの端末の、このブラウザ内に保存されます。プライベートブラウズでは使わず、定期的にバックアップしてください。ブラウザのデータを消すと記録も消えます。Safariとホーム画面のアプリで保存領域が異なる場合は、バックアップで移してください。</p><div class="backup-actions"><button id="export" type="button">書き出す</button><button id="import" type="button">読み込む</button><input id="backup-file" type="file" accept="application/json,.json" hidden></div><p>iPhoneのSafariで開き、「共有」→「ホーム画面に追加」でアプリのように使えます。初回アクセスにはHTTPSでの公開が必要です。</p></details>
+<footer>小さな記録で、毎日に余白を。</footer>
+</main><div id="status" role="status" aria-live="polite" hidden></div><script>const BUDGET = 100000;
+function localDate(date = new Date()) {
+  return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+}
+function periodFor(value = localDate()) {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) throw new Error('日付が正しくありません');
+  const [y,m,d] = value.split('-').map(Number);
+  const check = new Date(y,m-1,d,12);
+  if (localDate(check) !== value) throw new Error('日付が正しくありません');
+  const start = new Date(y,m-1-(d<25?1:0),25,12);
+  const next = new Date(start.getFullYear(),start.getMonth()+1,25,12);
+  const end = new Date(next.getFullYear(),next.getMonth(),24,12);
+  return {start:localDate(start), end:localDate(end), next:localDate(next)};
+}
+function validateEntry(entry) {
+  if (!entry || typeof entry.id !== 'string' || !entry.id || !Number.isSafeInteger(entry.amount) || entry.amount <= 0 || entry.amount > 99999999 || typeof entry.note !== 'string' || entry.note.length > 100) throw new Error('支出データが正しくありません');
+  if (typeof entry.date !== 'string') throw new Error('日付が正しくありません');
+  periodFor(entry.date);
+  return {id:entry.id,amount:entry.amount,note:entry.note,date:entry.date};
+}
+function validateBackup(data) {
+  if (!data || data.version !== 1 || !Array.isArray(data.entries) || data.entries.length > 100000) throw new Error('対応するバックアップファイルではありません');
+  const entries = data.entries.map(validateEntry);
+  if (new Set(entries.map(e=>e.id)).size !== entries.length) throw new Error('重複するデータがあります');
+  return entries;
+}
+function summary(entries, date=localDate()) {
+  const period = periodFor(date);
+  const items = entries.filter(e=>e.date>=period.start && e.date<=period.end).sort((a,b)=>b.date.localeCompare(a.date));
+  const spent = items.reduce((sum,e)=>sum+e.amount,0);
+  return {period,items,spent,remaining:BUDGET-spent};
+}
+
+const KEY='watashi-no-yohaku-v1';
+const $=id=>document.getElementById(id);
+const yen=value=>'¥'+value.toLocaleString('ja-JP');
+const shortDate=value=>value.slice(5).split('-').map(Number).join('/');
+let entries=[],storageReady=true,memoryOnly=false,day=localDate(),noticeTimer;
+const isPreview=document.body.dataset.preview==='true';
+function explain(message){$('storage-notice').textContent=message;$('storage-notice').hidden=false;}
+function useMemory(){memoryOnly=true;explain('試用モード：このプレビューでは端末への保存が使えません。入力は試せますが、画面を閉じたり再読み込みすると消えます。');}
+function createEntryId(){
+ if(globalThis.crypto?.randomUUID)return globalThis.crypto.randomUUID();
+ if(globalThis.crypto?.getRandomValues)return Array.from(globalThis.crypto.getRandomValues(new Uint8Array(16)),n=>n.toString(16).padStart(2,'0')).join('');
+ return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}-${Math.random().toString(36).slice(2)}`;
+}
+function notify(message){$('form-feedback').textContent=message;$('form-feedback').hidden=false;$('status').textContent=message;$('status').hidden=false;clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>$('status').hidden=true,6000);}
+let stored=null;
+try{stored=localStorage.getItem(KEY);}
+catch{
+ if(isPreview)useMemory();
+ else{storageReady=false;explain('端末への保存が許可されていないため記録できません。Safariで公開URLを開き、ブラウザの保存設定をご確認ください。');}
+}
+if(stored!==null){
+ try{entries=validateBackup(JSON.parse(stored));}
+ catch{storageReady=false;explain('保存データを読み込めません。上書きを防ぐため記録を停止しました。バックアップから復元してください。');}
+}
+function save(next){
+ if(memoryOnly){entries=next;return true;}
+ try{localStorage.setItem(KEY,JSON.stringify({version:1,entries:next}));entries=next;return true;}
+ catch{
+  if(isPreview){useMemory();entries=next;return true;}
+  notify('保存できませんでした。空き容量やブラウザの保存設定を確認してください。');return false;
+ }
+}
+function render(){
+ const current=summary(entries);$('period').textContent=`${shortDate(current.period.start)} — ${shortDate(current.period.end)}`;
+ $('remaining').textContent=yen(current.remaining);$('spent').textContent=yen(current.spent);
+ $('balance-title').textContent=current.remaining<0?'予算を超えた金額':'あと使えるお金';
+ if(current.remaining<0)$('remaining').textContent=yen(-current.remaining)+' 超過';
+ const used=Math.min(100,Math.round(current.spent/100000*100));$('progress').style.width=`${used}%`;
+ document.querySelector('.meter').setAttribute('aria-valuenow',String(used));
+ $('next').textContent=`次は${shortDate(current.period.next)}に更新 · 残金は繰り越しません`;
+ const selected=$('history-period').value;
+ const periods=[...new Set([current.period.start,...entries.map(e=>periodFor(e.date).start)])].sort().reverse();
+ $('history-period').replaceChildren(...periods.map(p=>{const option=document.createElement('option');option.value=p;option.textContent=`${p.slice(0,4)}年 ${shortDate(p)}〜${shortDate(periodFor(p).end)}`;return option;}));
+ if(periods.includes(selected))$('history-period').value=selected;
+ renderHistory();
+}
+function renderHistory(){
+ const selected=$('history-period').value;if(!selected)return;
+ const view=summary(entries,selected);$('history-total').textContent=`${view.items.length}件 · 合計 ${yen(view.spent)}`;
+ $('entries').replaceChildren(...view.items.map(entry=>{
+  const li=document.createElement('li');const icon=document.createElement('span');icon.className='item-icon';icon.textContent='−';icon.setAttribute('aria-hidden','true');
+  const info=document.createElement('div');info.className='item-info';const note=document.createElement('div');note.className='item-note';note.textContent=entry.note||'支出';
+  const date=document.createElement('div');date.className='item-date';date.textContent=`${entry.date.slice(0,4)}.${entry.date.slice(5).replace('-','.')}`;info.append(note,date);
+  const amount=document.createElement('span');amount.className='item-amount';amount.textContent=yen(entry.amount);
+  const remove=document.createElement('button');remove.type='button';remove.className='delete';remove.textContent='×';remove.setAttribute('aria-label',`${entry.date}の${entry.note||'支出'} ${yen(entry.amount)}を削除`);
+  remove.addEventListener('click',()=>{if(!storageReady){notify($('storage-notice').textContent);return;}if(confirm(`${entry.note||'支出'} ${yen(entry.amount)}を削除しますか？`)&&save(entries.filter(e=>e.id!==entry.id))){render();notify('支出を削除しました');}});
+  li.append(icon,info,amount,remove);return li;
+ }));$('empty').hidden=view.items.length>0;
+}
+$('date').value=localDate();
+$('entry-form').addEventListener('invalid',event=>{notify(event.target.id==='amount'?'金額を数字で入力してください（例：80000）':'使った日を入力してください');},true);
+function recordExpense(event){
+ event.preventDefault();if(!$('entry-form').reportValidity())return;if(!storageReady){notify($('storage-notice').textContent);return;}
+ try{
+ const raw=$('amount').value.replace(/[０-９]/g,c=>String.fromCharCode(c.charCodeAt(0)-0xfee0)).replace(/[,，]/g,'');
+ if(!/^\d+$/.test(raw))throw new Error('金額は1円以上の整数で入力してください');
+ const entry=validateEntry({id:createEntryId(),amount:Number(raw),date:$('date').value,note:$('note').value.trim()});
+ if(entry.date>localDate())throw new Error('今日までの日付を選んでください');
+ if(save([...entries,entry])){
+ $('amount').value='';$('note').value='';$('history-period').value='';render();
+ if(periodFor(entry.date).start!==periodFor().start)$('history-period').value=periodFor(entry.date).start;
+ renderHistory();notify(memoryOnly?'支出を試しに記録しました（再読み込みで消えます）':'支出を記録しました');
+ }
+ }catch(error){notify(error.message);}
+}
+$('record-entry').addEventListener('click',recordExpense);
+$('entry-form').addEventListener('submit',recordExpense);
+$('entry-form').addEventListener('keydown',event=>{
+ if(event.key==='Enter'&&!event.isComposing&&event.target.tagName==='INPUT'){event.preventDefault();$('record-entry').click();}
+});
+$('history-period').addEventListener('change',renderHistory);
+$('export').addEventListener('click',()=>{
+ if(!storageReady){notify('保存データを読み込めないため書き出せません。');return;}
+ const blob=new Blob([JSON.stringify({version:1,entries},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`yohaku-${localDate()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),10000);
+});
+$('import').addEventListener('click',()=>$('backup-file').click());
+$('backup-file').addEventListener('change',async event=>{
+ const file=event.target.files[0];if(!file)return;
+ try{if(file.size>20000000)throw new Error('ファイルが大きすぎます');const restored=validateBackup(JSON.parse(await file.text()));
+ if(confirm(`${restored.length}件の記録を読み込み、現在の記録を置き換えますか？`)){
+ if(save(restored)){storageReady=true;render();notify('バックアップを読み込みました');}
+ }
+ }catch(error){notify(`読み込めませんでした: ${error.message}`);}finally{event.target.value='';}
+});
+function refreshDay(){const today=localDate();if(day!==today){if($('date').value===day)$('date').value=today;day=today;$('history-period').value='';render();}}
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshDay();});setInterval(refreshDay,30000);
+render();
+</script>
+</body></html>

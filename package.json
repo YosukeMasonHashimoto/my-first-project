@@ -1,0 +1,11 @@
+{
+  "name": "my-budget",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 8000 --bind 0.0.0.0",
+    "test": "node --test",
+    "preview": "node scripts/build-preview.mjs",
+    "build": "node scripts/build-site.mjs"
+  }
+}
