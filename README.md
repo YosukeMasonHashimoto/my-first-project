@@ -33,14 +33,8 @@ npm start
 
 ## GitHub Pagesでの公開
 
-現在の公開元は `main` ブランチのルートです。`.nojekyll` により静的ファイルをそのまま配信します。`main` に変更を反映するとPagesの公開処理が起動します。
-
-GitHubリポジトリの **Settings → Pages → Build and deployment** の設定：
-
-- Source: **Deploy from a branch**
-- Branch: **main**
-- Folder: **/ (root)**
+GitHub PagesのSourceは **GitHub Actions** です。`main` ブランチへの変更で `.github/workflows/deploy-pages.yml` が起動し、テスト・ビルド後に `_site/` のアプリ用ファイルだけを公開します。開発用ファイルや試用版の `preview.html` はサイトに配信しません。Actionsの「Publish budget app」から手動実行もできます。
 
 公開先は `https://yosukemasonhashimoto.github.io/my-first-project/` です。支出データは利用端末のブラウザに保存され、GitHubには送られません。公開前のプレビューに入力した試用データは、公開URLには自動では移行されません。
 
-公開用ファイルだけを抽出したい場合は `npm run build` で `_site/` に生成できます。別途準備した `gh-pages` ブランチは現在の公開元ではありません。
+`npm run build` でローカルにも公開用の `_site/` を生成できます。別途準備した `gh-pages` ブランチは現在の公開元ではありません。
