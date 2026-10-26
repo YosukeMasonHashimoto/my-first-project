@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '17 21 1 * *'
 
 permissions:
   contents: read
@@ -22,6 +24,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - name: Refresh Japanese holiday calendar
+        run: npm run holidays:update
       - name: Test budget calculations
         run: npm test
       - name: Build static site

@@ -1,4 +1,4 @@
-import {localDate,periodFor,summary,validateBackup,validateEntry} from './budget.js';
+import {localDate,periodFor,summary,validateBackup,validateEntry,hasHolidayCalendar} from './budget.js';
 const KEY='watashi-no-yohaku-v1';
 const $=id=>document.getElementById(id);
 const yen=value=>'¥'+value.toLocaleString('ja-JP');
@@ -32,7 +32,9 @@ function save(next){
  }
 }
 function render(){
- const current=summary(entries);$('period').textContent=`${shortDate(current.period.start)} — ${shortDate(current.period.end)}`;
+ const current=summary(entries);
+ $('calendar-notice').hidden=hasHolidayCalendar(current.period.start)&&hasHolidayCalendar(current.period.next);
+ $('period').textContent=`${shortDate(current.period.start)} — ${shortDate(current.period.end)}`;
  $('remaining').textContent=yen(current.remaining);$('spent').textContent=yen(current.spent);
  $('balance-title').textContent=current.remaining<0?'予算を超えた金額':'あと使えるお金';
  if(current.remaining<0)$('remaining').textContent=yen(-current.remaining)+' 超過';
