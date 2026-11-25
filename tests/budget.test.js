@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {periodFor,summary,validateBackup,paydayFor,isBusinessDay,hasHolidayCalendar} from '../budget.js';
+import {periodFor,summary,validateBackup,paydayFor,isBusinessDay,hasHolidayCalendar,validateBudget,expensesCsv} from '../budget.js';
 const entry=(date,amount,id='a')=>({id,date,amount,note:''});
 test('2026年10月25日（日）は23日（金）に切り替わる',()=>{
  assert.equal(paydayFor(2026,10),'2026-10-23');
@@ -59,4 +59,18 @@ test('バックアップ形式を維持し、不正な金額・日付・重複ID
  assert.throws(()=>validateBackup({version:1,entries:[entry('2026-02-30',100)]}));
  assert.throws(()=>validateBackup({version:1,entries:[...data.entries,...data.entries]}));
  assert.throws(()=>validateBackup({version:2,entries:[]}));
+});
+
+test('設定した予算額で残高を計算し、不正な予算は拒否する',()=>{
+ const budget=validateBudget(85000);
+ assert.equal(summary([entry('2026-10-23',5000)],'2026-10-23',budget).remaining,80000);
+ assert.equal(summary([],'2026-11-25',budget).remaining,85000);
+ for(const value of [0,-1,3.5,Infinity,'85000',Number.MAX_SAFE_INTEGER+1])assert.throws(()=>validateBudget(value));
+});
+test('CSVは日本語、引用符、改行を保持し、メモの数式を無効にする',()=>{
+ const items=[
+  {...entry('2026-10-24',1200),note:'カフェ,"駅前"\n昼'},
+  {...entry('2026-10-23',500),note:'=1+1'},
+ ];
+ assert.equal(expensesCsv(items),`\uFEFF日付,金額（円）,メモ\r\n2026-10-24,1200,"カフェ,""駅前""\n昼"\r\n2026-10-23,500,"'=1+1"\r\n`);
 });

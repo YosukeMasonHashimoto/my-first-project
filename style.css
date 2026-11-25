@@ -3,3 +3,9 @@
 .notice{border:1px solid #d9c995;background:#fff8df;color:#70551e;border-radius:12px;padding:14px;font-size:12px;line-height:1.8;margin:0 0 20px}.feedback{font-size:12px;line-height:1.7;color:#38584a;margin:14px 0 0}
 
 .pay-rule{font-size:10px;color:#c1d4ca;margin:8px 0 0;line-height:1.7}
+
+.budget-settings { margin-top: 14px; }
+.budget-settings > summary { cursor: pointer; padding: 10px 0; }
+.budget-settings .help { color: #526b60; }
+.history-actions { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.history-actions button { font-size: 12px; }

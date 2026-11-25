@@ -47,9 +47,23 @@ export function validateBackup(data) {
   if (new Set(entries.map(e=>e.id)).size !== entries.length) throw new Error('重複するデータがあります');
   return entries;
 }
-export function summary(entries, date=localDate()) {
+export function validateBudget(amount) {
+  if (!Number.isSafeInteger(amount) || amount <= 0) {
+    throw new Error('予算は1円以上の整数で入力してください');
+  }
+  return amount;
+}
+export function expensesCsv(items) {
+  const rows = items.map(({date, amount, note}) => {
+    // Keep spreadsheet formulas in user-entered notes from being evaluated.
+    const text = /^(?:[\s\u0000-\u001f]*[=+@＝＋＠−－-]|[\t\r\n])/u.test(note) ? "'" + note : note;
+    return [date, amount, '"' + text.replaceAll('"', '""') + '"'].join(',');
+  });
+  return '\uFEFF' + ['日付,金額（円）,メモ', ...rows].join('\r\n') + '\r\n';
+}
+export function summary(entries, date=localDate(), budget=BUDGET) {
   const period = periodFor(date);
   const items = entries.filter(e=>e.date>=period.start && e.date<=period.end).sort((a,b)=>b.date.localeCompare(a.date));
   const spent = items.reduce((sum,e)=>sum+e.amount,0);
-  return {period,items,spent,remaining:BUDGET-spent};
+  return {period,items,spent,remaining:budget-spent};
 }
